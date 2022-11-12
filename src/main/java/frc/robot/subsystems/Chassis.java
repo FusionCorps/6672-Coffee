@@ -48,4 +48,16 @@ public class Chassis extends SubsystemBase {
         m_drive.curvatureDrive(fwd, rot, true);
     }
 
+    public void setVoltages(double left_v, double right_v) {
+        drive_fl.setVoltage(left_v);
+        drive_bl.setVoltage(left_v);
+
+        drive_fr.setVoltage(right_v);
+        drive_br.setVoltage(right_v);
+    }
+
+    public double getLeftEncoder() {
+        return (drive_fl.getSelectedSensorPosition()+ drive_bl.getSelectedSensorPosition())/2;
+    }
+
 }

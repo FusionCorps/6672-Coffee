@@ -16,8 +16,7 @@ public class DriveChassis extends CommandBase {
 
     @Override
     public void execute() {
-        m_chassis.curvatureDrive(m_controller.getRawAxis(1), m_controller.getRawAxis(4));
-        System.out.println(m_chassis.photonTable.getEntry("targetYaw").getDouble(0.0));
+        m_chassis.curvatureDrive(-m_controller.getRawAxis(1), 0.8*m_controller.getRawAxis(4));
     }
 
 }

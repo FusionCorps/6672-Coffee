@@ -7,9 +7,11 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.AutonEncoder;
 import frc.robot.commands.DriveChassis;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.TargetToTag;
+import frc.robot.commands.auton.BasicEight;
 import frc.robot.subsystems.Chassis;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -55,6 +57,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return new BasicEight(m_chassis);
   }
 }
